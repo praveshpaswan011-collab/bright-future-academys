@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bright Future Academy - Tuition Centre in Biratnagar-12, Maiti, Nepal. Classes UKG to 10 with exam preparation.">
+  <title>Bright Future Academy | Tuition Centre</title>
+  <style>
+    :root{
+      --primary:#123b7a;
+      --secondary:#f4b400;
+      --dark:#0d1b2a;
+      --light:#f5f8fc;
+      --white:#fff;
+      --text:#243447;
+      --muted:#667085;
+      --shadow:0 10px 30px rgba(13,27,42,.10);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:var(--light);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1100px,92%);margin:auto}
+
+    header{
+      background:linear-gradient(135deg,var(--dark),var(--primary));
+      color:white;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 4px 15px rgba(0,0,0,.15);
+    }
+    .nav{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:48px;height:48px;border-radius:12px;
+      background:var(--secondary);color:var(--dark);
+      display:grid;place-items:center;font-weight:900;font-size:20px;
+    }
+    .brand h1{font-size:20px;line-height:1.1}
+    .brand small{opacity:.8}
+    nav{display:flex;gap:22px;align-items:center}
+    nav a{font-weight:600;font-size:14px;opacity:.95}
+    nav a:hover{color:var(--secondary)}
+    .menu{display:none;background:none;border:0;color:white;font-size:28px}
+
+    .hero{
+      background:
+        linear-gradient(90deg,rgba(13,27,42,.96),rgba(18,59,122,.83)),
+        radial-gradient(circle at 80% 20%,#f4b400 0,transparent 28%);
+      color:white;
+      padding:90px 0 80px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:45px;align-items:center}
+    .badge{
+      display:inline-block;background:rgba(244,180,0,.16);
+      border:1px solid rgba(244,180,0,.55);
+      color:#ffd66b;padding:7px 13px;border-radius:999px;
+      font-weight:700;font-size:13px;margin-bottom:18px;
+    }
+    .hero h2{font-size:clamp(36px,6vw,64px);line-height:1.05;margin-bottom:18px}
+    .hero h2 span{color:var(--secondary)}
+    .hero p{font-size:18px;max-width:650px;opacity:.9;margin-bottom:28px}
+    .buttons{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      display:inline-block;padding:13px 20px;border-radius:9px;
+      font-weight:700;border:2px solid transparent;transition:.2s;
+    }
+    .btn-primary{background:var(--secondary);color:var(--dark)}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-outline{border-color:rgba(255,255,255,.5);color:white}
+    .btn-outline:hover{background:white;color:var(--dark)}
+    .hero-card{
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:22px;padding:28px;
+      backdrop-filter:blur(8px);
+    }
+    .hero-card h3{margin-bottom:15px}
+    .hero-card p{font-size:15px;margin:8px 0}
+    .hero-card strong{color:#ffd66b}
+
+    section{padding:75px 0}
+    .section-title{text-align:center;margin-bottom:42px}
+    .section-title h2{font-size:34px;color:var(--dark);margin-bottom:8px}
+    .section-title p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{
+      background:white;border-radius:16px;padding:25px;
+      box-shadow:var(--shadow);border:1px solid #e9eef5;
+    }
+    .card .icon{font-size:34px;margin-bottom:12px}
+    .card h3{color:var(--primary);margin-bottom:8px}
+    .card p{color:var(--muted);font-size:15px}
+
+    .about{background:white}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .about-box{
+      background:linear-gradient(135deg,#edf4ff,#fff8df);
+      border-radius:20px;padding:35px;
+      border:1px solid #e5ebf5;
+    }
+    .about-box .big{font-size:58px;font-weight:900;color:var(--primary)}
+    .list{list-style:none;margin-top:20px}
+    .list li{padding:9px 0;border-bottom:1px solid #edf0f4}
+    .list li:last-child{border-bottom:0}
+
+    .stats{
+      background:var(--dark);color:white;padding:45px 0;
+    }
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+    .stat strong{display:block;font-size:32px;color:var(--secondary)}
+    .stat span{opacity:.8;font-size:14px}
+
+    .classes{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .class-item{
+      background:white;border-radius:14px;padding:20px;
+      box-shadow:var(--shadow);border-left:5px solid var(--secondary);
+    }
+    .class-item h3{color:var(--primary);margin-bottom:4px}
+
+    .contact{background:white}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .contact-card{
+      background:var(--light);border-radius:18px;padding:28px;
+      border:1px solid #e6ebf2;
+    }
+    .contact-row{display:flex;gap:14px;align-items:flex-start;margin:18px 0}
+    .contact-row .icon{font-size:24px}
+    .contact-row small{display:block;color:var(--muted)}
+    .contact-row a{color:var(--primary);font-weight:700}
+
+    footer{background:#08121d;color:white;padding:28px 0;text-align:center}
+    footer p{opacity:.75;font-size:14px}
+
+    @media(max-width:800px){
+      .menu{display:block}
+      nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--dark);padding:18px 5%;flex-direction:column;align-items:flex-start}
+      nav.show{display:flex}
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .stats-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .hero{padding:65px 0}
+      section{padding:55px 0}
+      .grid,.classes{grid-template-columns:1fr}
+      .brand h1{font-size:17px}
+      .brand small{font-size:11px}
+      .hero h2{font-size:42px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand">
+      <div class="logo">BFA</div>
+      <div>
+        <h1>Bright Future Academy</h1>
+        <small>Tuition Centre</small>
+      </div>
+    </a>
+    <button class="menu" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+    <nav id="nav">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#classes" onclick="closeMenu()">Classes</a>
+      <a href="#teachers" onclick="closeMenu()">Teachers</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">QUALITY EDUCATION • BETTER FUTURE</span>
+        <h2>Learn Today.<br><span>Lead Tomorrow.</span></h2>
+        <p>
+          Welcome to Bright Future Academy, a dedicated tuition centre
+          helping students build strong concepts, confidence and exam readiness.
+        </p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#contact">Contact Us</a>
+          <a class="btn btn-outline" href="#classes">View Classes</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>📚 Our Focus</h3>
+        <p>✓ Strong academic foundation</p>
+        <p>✓ Regular practice and revision</p>
+        <p>✓ Individual attention</p>
+        <p>✓ <strong>Exam Preparation</strong></p>
+        <p>✓ Qualified +2-level teachers</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Bright Future Academy</h2>
+        <p>Supporting students with focused tuition and exam preparation.</p>
+      </div>
+      <div class="about-grid">
+        <div>
+          <h2>Education with attention and consistency.</h2>
+          <p style="margin-top:15px;color:#667085">
+            Bright Future Academy provides tuition support for students from
+            UKG to Class 10. Our approach focuses on understanding concepts,
+            regular practice and preparing students to perform confidently in examinations.
+          </p>
+          <ul class="list">
+            <li>✅ Classes from UKG to Class 10</li>
+            <li>✅ All major subjects covered</li>
+            <li>✅ Qualified +2-level teachers</li>
+            <li>✅ Regular academic guidance</li>
+            <li>✅ Exam-focused preparation</li>
+          </ul>
+        </div>
+        <div class="about-box">
+          <div class="big">BFA</div>
+          <h3>Bright Future Academy</h3>
+          <p>Tuition Centre • Biratnagar-12, Maiti, Nepal</p>
+          <p style="margin-top:15px">Building knowledge, confidence and better academic habits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="container stats-grid">
+      <div class="stat"><strong>UKG–10</strong><span>Classes Available</span></div>
+      <div class="stat"><strong>4+</strong><span>Qualified Teachers</span></div>
+      <div class="stat"><strong>All</strong><span>Major Subjects</span></div>
+      <div class="stat"><strong>100%</strong><span>Focus on Learning</span></div>
+    </div>
+  </div>
+
+  <section id="classes">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Classes</h2>
+        <p>Choose the right academic support for your child.</p>
+      </div>
+      <div class="classes">
+        <div class="class-item">
+          <h3>UKG – Primary Level</h3>
+          <p>Strong basics, reading, writing, mathematics and general learning skills.</p>
+        </div>
+        <div class="class-item">
+          <h3>Class 1 – 5</h3>
+          <p>Concept-based learning with regular practice and revision.</p>
+        </div>
+        <div class="class-item">
+          <h3>Class 6 – 8</h3>
+          <p>Focused support for core subjects and stronger academic foundations.</p>
+        </div>
+        <div class="class-item">
+          <h3>Class 9 – 10</h3>
+          <p>Focused exam preparation, practice and revision for school examinations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#eef3f9" id="teachers">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Teachers</h2>
+        <p>Dedicated teachers working to support student learning.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="icon">👨‍🏫</div><h3>Experienced Guidance</h3><p>Teachers focus on clear explanations and student understanding.</p></div>
+        <div class="card"><div class="icon">📖</div><h3>All Subjects</h3><p>Our teaching team covers the major subjects required by students.</p></div>
+        <div class="card"><div class="icon">🎯</div><h3>Exam Focus</h3><p>Practice and revision are included to help students prepare effectively.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose Us?</h2>
+        <p>A simple and student-focused approach to tuition.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="icon">🧠</div><h3>Concept Learning</h3><p>We emphasize understanding instead of simply memorizing answers.</p></div>
+        <div class="card"><div class="icon">✍️</div><h3>Regular Practice</h3><p>Students get opportunities to practice what they learn.</p></div>
+        <div class="card"><div class="icon">🏆</div><h3>Exam Preparation</h3><p>Revision and exam-oriented preparation help students stay ready.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Get in touch for admission and class information.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>📍 Academy Information</h3>
+          <div class="contact-row">
+            <div class="icon">📍</div>
+            <div><small>Address</small><strong>Biratnagar-12, Maiti, Nepal</strong></div>
+          </div>
+          <div class="contact-row">
+            <div class="icon">📞</div>
+            <div><small>Phone</small>
+              <a href="tel:+9779708728877">+977 9708728877</a><br>
+              <a href="tel:+9779816710935">+977 981-6710935</a><br>
+              <a href="tel:+9779824341611">+977 9824341611</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="icon">✉️</div>
+            <div><small>Email</small><a href="mailto:bf9611288@gmail.com">bf9611288@gmail.com</a></div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>📢 Admission Enquiry</h3>
+          <p style="margin:12px 0;color:#667085">
+            Contact us to ask about available classes, subjects, schedules and admission.
+          </p>
+          <div class="buttons" style="margin-top:20px">
+            <a class="btn btn-primary" href="tel:+9779708728877">📞 Call Now</a>
+            <a class="btn" style="background:#25D366;color:white" href="https://wa.me/9779708728877" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <p style="margin-top:18px;font-size:13px;color:#667085">
+            Please confirm the latest class schedule and fees directly with the academy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> Bright Future Academy. All Rights Reserved.</p>
+    <p>Biratnagar-12, Maiti, Nepal • Tuition Centre</p>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(){
+    document.getElementById('nav').classList.toggle('show');
+  }
+  function closeMenu(){
+    document.getElementById('nav').classList.remove('show');
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
