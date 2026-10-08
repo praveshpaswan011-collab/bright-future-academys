@@ -141,6 +141,18 @@
     .contact-row small{display:block;color:var(--muted)}
     .contact-row a{color:var(--primary);font-weight:700}
 
+    .links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .link-card{
+      background:white;border-radius:16px;padding:25px;box-shadow:var(--shadow);border:1px solid #e9eef5;
+    }
+    .link-card .icon{font-size:30px;margin-bottom:10px}
+    .link-card h3{color:var(--primary);margin-bottom:10px}
+    .link-card p{color:var(--muted);margin-bottom:16px;font-size:15px}
+    .link-card a{
+      display:block;background:#edf4ff;color:var(--primary);padding:10px 12px;border-radius:8px;font-weight:700;text-align:center;
+    }
+    .link-card a:hover{background:var(--primary);color:white}
+
     footer{background:#08121d;color:white;padding:28px 0;text-align:center}
     footer p{opacity:.75;font-size:14px}
 
@@ -149,13 +161,13 @@
       nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--dark);padding:18px 5%;flex-direction:column;align-items:flex-start}
       nav.show{display:flex}
       .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr 1fr}
+      .grid,.links-grid{grid-template-columns:1fr 1fr}
       .stats-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:560px){
       .hero{padding:65px 0}
       section{padding:55px 0}
-      .grid,.classes{grid-template-columns:1fr}
+      .grid,.classes,.links-grid{grid-template-columns:1fr}
       .brand h1{font-size:17px}
       .brand small{font-size:11px}
       .hero h2{font-size:42px}
@@ -180,6 +192,7 @@
       <a href="#classes" onclick="closeMenu()">Classes</a>
       <a href="#teachers" onclick="closeMenu()">Teachers</a>
       <a href="#contact" onclick="closeMenu()">Contact</a>
+      <a href="#links" onclick="closeMenu()">Quick Links</a>
     </nav>
   </div>
 </header>
@@ -345,6 +358,59 @@
           <p style="margin-top:18px;font-size:13px;color:#667085">
             Please confirm the latest class schedule and fees directly with the academy.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="links" style="background:#f0f5fb">
+    <div class="container">
+      <div class="section-title">
+        <h2>Quick Links</h2>
+        <p>Direct access to contact, enquiry, map and academy resources.</p>
+      </div>
+
+      <div class="links-grid">
+        <div class="link-card">
+          <div class="icon">📞</div>
+          <h3>Call Us</h3>
+          <p>Talk directly with our team for admissions and class queries.</p>
+          <a href="tel:+9779708728877">+977 9708728877</a>
+        </div>
+
+        <div class="link-card">
+          <div class="icon">💬</div>
+          <h3>WhatsApp</h3>
+          <p>Message us quickly for support, updates and enrolment details.</p>
+          <a href="https://wa.me/9779708728877" target="_blank" rel="noopener">Open WhatsApp</a>
+        </div>
+
+        <div class="link-card">
+          <div class="icon">📍</div>
+          <h3>Location</h3>
+          <p>Visit Bright Future Academy in Biratnagar-12, Maiti, Nepal.</p>
+          <a href="https://maps.google.com/?q=Biratnagar-12+Maiti+Nepal" target="_blank" rel="noopener">Open Map</a>
+        </div>
+
+        <div class="link-card">
+          <div class="icon">✉️</div>
+          <h3>Email</h3>
+          <p>Send us your questions, admission request or schedule enquiry.</p>
+          <a href="mailto:bf9611288@gmail.com">bf9611288@gmail.com</a>
+        </div>
+
+        <div class="link-card">
+          <div class="icon">🧾</div>
+          <h3>Admission Enquiry</h3>
+          <p>Ask about classes, subject options and student support.</p>
+          <a href="mailto:bf9611288@gmail.com?subject=Admission%20Enquiry">Send Enquiry</a>
+        </div>
+
+        <div class="link-card">
+          <div class="icon">🌐</div>
+          <h3>GitHub</h3>
+          <p>Open the project repository and view the academy website source.</p>
+          <a href="https://github.com/praveshpaswan011-collab/bright-future-academys" target="_blank" rel="noopener">Open Repository</a>
         </div>
       </div>
     </div>
